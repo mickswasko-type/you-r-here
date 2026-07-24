@@ -1,0 +1,14 @@
+{
+  "name": "you-r-here",
+  "version": "1.0.0",
+  "description": "You /r/ Here — A Mallworld Directory",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  },
+  "private": true
+}

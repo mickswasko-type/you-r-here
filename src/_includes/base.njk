@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% if title %}{{ title }} · {% endif %}You /r/ Here — A Mallworld Directory</title>
+	<meta name="description" content="Compiling the geography of Mallworld — on Reddit and beyond.">
+	<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+	<header class="site-header">
+		<a class="site-title" href="/">You /r/ Here</a>
+	</header>
+	<main>
+		{{ content | safe }}
+	</main>
+	<footer class="site-footer">
+		<p>A hand-curated directory. Creators own their work.</p>
+	</footer>
+</body>
+</html>
