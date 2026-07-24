@@ -1,0 +1,18 @@
+---
+layout: base.njk
+title: "Locations"
+permalink: /locations/
+---
+<h1>Locations</h1>
+
+<p>Recurring places in community maps. Each page collects every archived map that depicts the location.</p>
+
+<ul class="locations-index">
+	{% for loc in collections.locations %}
+	{% set count = collections.entries | entriesForLocation(loc.fileSlug) | length %}
+	<li>
+		<a href="{{ loc.url }}">{{ loc.data.title }}</a>
+		<span class="count">{% if count == 1 %}1 map{% else %}{{ count }} maps{% endif %}</span>
+	</li>
+	{% endfor %}
+</ul>

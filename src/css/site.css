@@ -44,3 +44,45 @@ h1 {
 	text-transform: uppercase;
 	color: #555;
 }
+
+.entry-image img,
+.location-maps img {
+	max-width: 100%;
+	height: auto;
+	background: var(--panel);
+}
+
+.catalog {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	gap: 0.35rem 1.25rem;
+	background: var(--panel);
+	padding: 1rem;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 0.85rem;
+}
+
+.catalog dt {
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #555;
+}
+
+.catalog dd {
+	margin: 0;
+}
+
+.location-maps {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+	gap: 1rem;
+}
+
+.locations-index .count {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 0.85rem;
+	color: #555;
+	margin-left: 0.5rem;
+}

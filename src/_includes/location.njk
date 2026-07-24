@@ -1,0 +1,26 @@
+---
+layout: base.njk
+---
+<article class="location">
+	<h1>{{ title }}</h1>
+
+	<div class="location-description">
+		{{ content | safe }}
+	</div>
+
+	{% set depicting = collections.entries | entriesForLocation(page.fileSlug) %}
+	<p class="location-count">
+		{% if depicting.length == 1 %}One archived map shows this location.{% else %}{{ depicting.length }} archived maps show this location.{% endif %}
+	</p>
+
+	<ul class="location-maps">
+		{% for e in depicting %}
+		<li>
+			<a href="{{ e.url }}">
+				<img src="/images/entries/{{ e.data.image }}" alt="{{ e.data.title }}" loading="lazy">
+				<span>{{ e.data.title }}</span>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+</article>

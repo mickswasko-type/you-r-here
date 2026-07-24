@@ -1,0 +1,58 @@
+---
+layout: base.njk
+---
+<article class="entry">
+	<h1>{{ title }}</h1>
+
+	<figure class="entry-image">
+		<img src="/images/entries/{{ image }}" alt="{{ title }} — a community-drawn Mallworld map" loading="lazy">
+	</figure>
+
+	<dl class="catalog">
+		<dt>Creator</dt>
+		<dd>{% if creator %}{{ creator }}{% else %}Not recorded{% endif %}</dd>
+
+		<dt>Source</dt>
+		<dd><a href="{{ source_url }}" rel="external">{{ source_community }}</a> — {{ source_status }}</dd>
+
+		<dt>Posted</dt>
+		<dd>{% if posted_date %}{{ posted_date }}{% else %}Unknown{% endif %}</dd>
+
+		<dt>Archived</dt>
+		<dd>{{ archived_date }}</dd>
+
+		{% if wayback_url %}
+		<dt>Wayback</dt>
+		<dd><a href="{{ wayback_url }}" rel="external">archived copy</a></dd>
+		{% endif %}
+
+		<dt>Medium, as stated</dt>
+		<dd>{{ medium_as_stated }}</dd>
+
+		{% if image_credit_note %}
+		<dt>Credit note</dt>
+		<dd>{{ image_credit_note }}</dd>
+		{% endif %}
+
+		<dt>Locations</dt>
+		<dd>
+			{%- for loc in collections.locations %}{% if loc.fileSlug in locations %}<a href="{{ loc.url }}">{{ loc.data.title }}</a> {% endif %}{% endfor -%}
+		</dd>
+
+		<dt>Tags</dt>
+		<dd>{{ tags | join(", ") }}</dd>
+
+		<dt>Permission</dt>
+		<dd>{{ permission }}</dd>
+	</dl>
+
+	<div class="curator-note">
+		{{ content | safe }}
+	</div>
+
+	<p class="attribution">
+		This map belongs to its creator. It is indexed here with a local copy for preservation;
+		the original post is the authoritative source:
+		<a href="{{ source_url }}" rel="external">view it on {{ source_community }}</a>.
+	</p>
+</article>
