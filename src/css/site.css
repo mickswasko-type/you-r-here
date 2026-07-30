@@ -86,3 +86,105 @@ h1 {
 	color: #555;
 	margin-left: 0.5rem;
 }
+
+/* ---- Homepage gallery ---- */
+.gallery-controls {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin: 1rem 0 0.5rem;
+}
+
+.shuffle-btn {
+	font: inherit;
+	font-size: 0.85rem;
+	letter-spacing: 0.03em;
+	padding: 0.35rem 0.9rem;
+	color: var(--link);
+	background: #fff;
+	border: 1px solid var(--link);
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.shuffle-btn:hover {
+	background: var(--link);
+	color: #fff;
+}
+
+.gallery-count {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 0.78rem;
+	color: #555;
+}
+
+.home-gallery {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+	gap: 1rem;
+}
+
+.gallery-card a {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	text-decoration: none;
+	color: inherit;
+	background: var(--panel);
+	border: 1px solid #dcd9d3;
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.gallery-card a:hover {
+	border-color: var(--link);
+}
+
+.gallery-frame {
+	display: block;
+	aspect-ratio: 4 / 3;
+	background: #e4e1db;
+}
+
+.gallery-frame img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.gallery-meta {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	padding: 0.6rem 0.7rem;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 0.8rem;
+}
+
+.gallery-title {
+	color: var(--text);
+	line-height: 1.3;
+}
+
+.gallery-creator {
+	color: #555;
+	font-size: 0.72rem;
+}
+
+.full-list {
+	margin-top: 1.5rem;
+	font-size: 0.9rem;
+}
+
+.full-list summary {
+	cursor: pointer;
+	color: var(--link);
+}
+
+.archive-list {
+	margin-top: 0.75rem;
+}

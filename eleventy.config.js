@@ -16,6 +16,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(HtmlBasePlugin);
 
 	eleventyConfig.addPassthroughCopy("src/css");
+	eleventyConfig.addPassthroughCopy("src/js");
 	eleventyConfig.addPassthroughCopy("src/images");
 
 	eleventyConfig.addCollection("entries", (api) => {
