@@ -34,7 +34,14 @@
 		frame.className = "gallery-frame";
 
 		var img = document.createElement("img");
-		img.src = a.dataset.image;
+		// Use the lightweight committed thumbnail (built by scripts/build-thumbs.py),
+		// falling back to the full image if a thumb is somehow missing.
+		var thumb = a.dataset.image.replace("/images/entries/", "/images/thumbs/");
+		img.src = thumb;
+		img.onerror = function () {
+			img.onerror = null;
+			img.src = a.dataset.image;
+		};
 		img.alt = a.dataset.title + " — a community-drawn Mallworld map";
 		img.loading = "lazy";
 		img.decoding = "async";
