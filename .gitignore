@@ -1,3 +1,8 @@
 node_modules/
 _site/
 .DS_Store
+
+# Discovery sweep: local Reddit credentials + unreviewed candidate queue.
+# Neither is published; candidates only enter the archive after human review.
+.reddit.json
+_inbox/
